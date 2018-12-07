@@ -1,0 +1,103 @@
+﻿@model IEnumerable<PremiumCalculator.Models.MemberViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <b>Premium Calculator</b>
+            <table class="table-condensed">
+                <tbody>
+                    <tr>
+                        <td>
+                            Member Name
+                        </td>
+                        <td>
+                            <select id="memberName" class="form-control"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Member Id
+                        </td>
+                        <td>
+                            <input type="text" id="memberId" class="form-control" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Premium Payer Id
+                        </td>
+                        <td>
+                            <input type="text" id="premiumPayerId" class="form-control" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Insured Value
+                        </td>
+                        <td>
+                            <select id="insuredValue" class="form-control"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Calculate Premium" class="btn btn-success" id="addBtn" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Policy Fee
+                        </td>
+                        <td>
+                            <input type="text" id="policyFeeId" class="form-control" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Premium
+                        </td>
+                        <td>
+                            <input type="text" id="premiumId" class="form-control" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Total
+                        </td>
+                        <td>
+                            <input type="text" id="totalId" class="form-control" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="View History" class="btn btn-success" id="historyId" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <b id="tableHeading" style="display:none;">Premium History</b>
+            <table class="table" id="premiumHistory">
+               
+               
+            </table>
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Scripts/Calculator.js"></script>
+<script>
+    Calculator.Init();
+    Calculator.Evaluate();
+    Calculator.History();
+</script>
+
